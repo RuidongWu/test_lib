@@ -4,7 +4,7 @@ using namespace std;
 #include "Top.h"
 
 void hello::print() {
-    cout << "Hello, World!" << endl;
+    cout << "Hello, World, every body!" << endl;
 }
 
 void add(int a, int b) {
