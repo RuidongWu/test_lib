@@ -11,6 +11,10 @@ void add(int a, int b) {
     cout << a + b << endl;
 }
 
+void mul(int a, int b) {
+    cout << a * b << endl;
+}
+
 int main(int argc, char *argv[]) {
     add(1, 2);
     cout << "Hello, World, every body!" << endl;
