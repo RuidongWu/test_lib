@@ -4,5 +4,5 @@
 
 void Hello::print()
 {
-    std::cout << "Hello Static Library!" << std::endl;
+    std::cout << "Hello Shared Library!" << std::endl;
 }
