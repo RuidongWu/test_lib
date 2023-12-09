@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Top",
+            "name": "hello_bin",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/Top",
+            "program": "${workspaceFolder}/build/hello_bin",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${fileDirname}",
