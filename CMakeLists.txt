@@ -17,12 +17,24 @@ add_library(hello::lib ALIAS hello_lib)
 
 target_include_directories(hello_lib PUBLIC ${PROJECT_SOURCE_DIR}/inc)
 
-find_package(ffmpeg)
-if(ffmpeg_FOUND)
-    message("ffmpeg found")
+find_package(Boost REQUIRED COMPONENTS filesystem system)
+if(Boost_FOUND)
+    message("boost found")
 else()
-    message("ffmpeg not found")
+    message("cannot find Boost")
 endif()
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET
+    libavdevice
+    libavfilter
+    libavformat
+    libavcodec
+    libswresample
+    libswscale
+    libavutil
+)
+message(PkgConfig::FFMPEG)
 
 add_executable(hello_bin src/main.cpp)
 target_compile_definitions(hello_bin PRIVATE EX3)
