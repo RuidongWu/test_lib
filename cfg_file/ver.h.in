@@ -1,0 +1,6 @@
+#ifndef __VER_H
+#define __VER_H
+
+const char* ver = "${cf_ex_VERSION}";
+
+#endif
