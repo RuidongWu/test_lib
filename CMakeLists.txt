@@ -36,3 +36,7 @@ add_executable(hello_bin src/main.cpp)
 target_compile_definitions(hello_bin PRIVATE EX3)
 
 target_link_libraries(hello_bin PRIVATE hello::lib Boost::filesystem)
+
+add_subdirectory(sub)
+add_subdirectory(sub1)
+add_subdirectory(sub2)
