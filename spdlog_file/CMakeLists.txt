@@ -1,0 +1,20 @@
+project(spdlog_file)
+
+find_package(spdlog REQUIRED)
+if(spdlog_FOUND)
+    message("spdlog found")
+else()
+    message(FATAL_ERROR "spdlog not found")
+endif()
+
+set(OpenCV_DIR /usr/lib/x86_64-linux-gnu/pkgconfig)
+find_package(OpenCV REQUIRED)
+if(OpenCV_FOUND)
+    message("OpenCV found")
+    MESSAGE(STATUS "    version: ${OpenCV_VERSION}")
+    MESSAGE(STATUS "    libraries: ${OpenCV_LIBS}")
+    MESSAGE(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
+endif()
+
+add_executable(spdlog_ex spdlog_ex.cpp)
+target_link_libraries(spdlog_ex PRIVATE spdlog::spdlog)
