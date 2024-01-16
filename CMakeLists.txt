@@ -20,34 +20,6 @@ else()
     message(FATAL_ERROR "cannot find Boost")
 endif()
 
-find_package(BLAS REQUIRED)
-if(BLAS_FOUND)
-    message("Blas found")
-endif()
-
-find_package(LAPACK REQUIRED)
-if(LAPACK_FOUND)
-    message("Lapack found")
-endif()
-
-find_package(OpenMP REQUIRED)
-find_package(MPI REQUIRED)
-
-find_package(PythonInterp REQUIRED)
-execute_process(COMMAND 
-    ${PYTHON_EXECUTABLE} "-c" "print('hello world')"
-    RESULT_VARIABLE _status
-    OUTPUT_VARIABLE _hello_world
-    ERROR_QUIET
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
-message(STATUS "RESULT_VARIABLE is : ${_status}")
-message(STATUS "OUTPUT_VARIABLE is: ${_hello_world}")
-message(STATUS "${PYTHON_VERSION_STRING}")
-message(STATUS "${PYTHON_VERSION_MAJOR}")
-message(STATUS "${PYTHON_VERSION_MINOR}")
-message(STATUS "${PYTHON_VERSION_PATCH}")
-
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET
     libavdevice
@@ -72,6 +44,3 @@ add_subdirectory(cfg_file)
 add_subdirectory(protobuf)
 add_subdirectory(spdlog_file)
 add_subdirectory(opencv_file)
-add_subdirectory(os_ex)
-add_subdirectory(instru_ex)
-add_subdirectory(eigen_ex)

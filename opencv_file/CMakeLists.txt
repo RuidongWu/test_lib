@@ -1,15 +1,8 @@
-project(opencv_ex LANGUAGES CXX)
+project(opencv_ex)
 
-set(DEFAULT_CXX_STANDARD 14)
+set(DEFAULT_CXX_STANDARD 11)
 
-list(APPEND __source opencv_ex.cpp)
-
-message("__source is ${__source}")
-
-
-option(GEN_KUN_LIB "Generate iKun library with opencv" OFF)
-
-#set(OpenCV_DIR /usr/lib/x86_64-linux-gnu/pkgconfig)
+set(OpenCV_DIR /usr/lib/x86_64-linux-gnu/pkgconfig)
 find_package(OpenCV REQUIRED)
 if(OpenCV_FOUND)
     message("OpenCV found")
@@ -24,8 +17,4 @@ add_executable(
     opencv_ex.cpp
 )
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
-
-if(GEN_KUN_LIB)
-    add_library(iKun SHARED ${__source})
-endif()
 
