@@ -3,6 +3,9 @@
         "iostream": "cpp",
         "thread": "cpp",
         "python.h": "c",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "dense": "cpp",
+        "eigenvalues": "cpp",
+        "cholesky": "cpp"
     }
 }
