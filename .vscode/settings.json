@@ -1,11 +1,14 @@
 {
     "files.associations": {
-        "iostream": "cpp",
-        "thread": "cpp",
-        "python.h": "c",
-        "chrono": "cpp",
-        "dense": "cpp",
-        "eigenvalues": "cpp",
-        "cholesky": "cpp"
+      "iostream": "cpp",
+      "thread": "cpp",
+      "python.h": "c",
+      "chrono": "cpp",
+      "dense": "cpp",
+      "eigenvalues": "cpp",
+      "cholesky": "cpp",
+      "ostream": "cpp",
+      "assert.h": "c",
+      "zmq.h": "c"
     }
 }
