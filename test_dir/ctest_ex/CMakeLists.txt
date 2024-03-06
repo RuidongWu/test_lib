@@ -18,6 +18,11 @@ target_link_libraries(cpp_test sum_int)
 enable_testing()
 
 add_test(
+  NAME catch_test
+  COMMAND $<TARGET_FILE:cpp_test> --success
+)
+
+add_test(
   NAME bash_test
   COMMAND ${BASH_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test.sh $<TARGET_FILE:sum_up>
 )

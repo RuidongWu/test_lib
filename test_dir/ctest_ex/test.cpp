@@ -1,12 +1,18 @@
 #include "sum_int.hpp"
 
+#define CATCH_CONFIG_MAIN
+#include "catch2/catch.hpp"
 #include <vector>
 
-int main() {
-  auto integers = {1,2,3,4,5};
-  if(sum_int(integers) == 15) {
-    return 0;
-  } else {
-    return 1;
+TEST_CASE("Sum of integers for a short vector", "[short]") {
+  auto integers = {1, 2, 3, 4, 5};
+  REQUIRE(sum_int(integers) == 15);
+}
+
+TEST_CASE("Sum of integers for a longer vector", "[long]") {
+  std::vector<int> integers;
+  for (int i=1; i<1001; i++) {
+    integers.push_back(i);
   }
+  REQUIRE(sum_int(integers) == 500500);
 }
